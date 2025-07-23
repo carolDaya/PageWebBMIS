@@ -1,0 +1,154 @@
+/* estilos generales */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  font-family: 'Montserrat', sans-serif;
+}
+
+section {
+  width: 100%;
+  max-width: 1500px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Swiper container */
+.swiper-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 50px;
+  text-align: center; 
+}
+
+.swiper-title {
+  font-size: 2.5rem;
+  color: #d5932b;
+  margin-bottom: 0.5rem;
+}
+
+.swiper-subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+
+/* --- SWIPER SLIDE STYLES --- */
+.swiper-slide {
+  position: relative; /*Necesario para posicionar elementos absolutos dentro de él */
+  display: block; 
+  padding: 0; 
+  box-sizing: border-box;
+  background-color: #fff; 
+  border-radius: 8px; 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 300px; 
+  height: 700px;
+  overflow: hidden; 
+}
+
+.slide-image-full {
+  width: 100%; 
+  height: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Asegura que la imagen no se desborde del contenedor */
+  border-radius: 8px; 
+}
+.slide-image-full img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+  border-radius: 8px; 
+}
+
+/* --- ESTILOS PARA EL TEXTO SUPERPUESTO --- */
+.slide-overlay-text {
+  position: absolute; /* Posiciona el texto sobre la imagen */
+  top: 0; /* Lo ancla a la parte superior del slide */
+  left: 0;
+  width: 100%;
+  padding: 20px 15px; /* Padding interno para el texto. Puedes ajustar estos valores. */
+  box-sizing: border-box;
+  text-align: center; /* Centra el texto */
+  z-index: 2; /* Asegura que el texto esté por encima de la imagen */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.slide-overlay-text h3 {
+  color: #2c7777; 
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1.8em;
+  font-weight: 900; 
+}
+
+.slide-overlay-text p {
+  color: #d5932b;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* --- NAVIGATION BUTTON STYLING --- */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #ffffff;
+  width: 50px;
+  height: 50px;
+  background-color: #FF8C00;
+  border-radius: 50%;
+  top: 47%; /* Keeps the buttons vertically centered */
+  /* Remove 'left: -30%;' and 'right: -30%;' */
+  box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.17);
+  /* Add these to position them relative to the swiper container */
+  position: absolute; /* Ensure absolute positioning relative to the swiper container */
+  transform: translateY(-50%); /* Adjust for vertical centering based on 'top: 47%' */
+  z-index: 10; /* Ensure buttons are above other content */
+}
+
+.swiper-button-prev {
+  left: 10px; 
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: #FFA500;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: '';
+}
+
+.swiper-button-prev .bx,
+.swiper-button-next .bx {
+  font-size: 25px;
+}
+
+
+@media (max-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  .swiper-button-prev {
+    left: 5px;
+  }
+  .swiper-button-next {
+    right: 5px;
+  }
+}
