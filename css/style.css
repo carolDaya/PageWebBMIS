@@ -1,0 +1,316 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers children horizontally */
+    min-height: 100vh; /* Ensures body is at least full viewport height */
+    background-color: #f8f8f8;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 0px;
+    margin: 0; /* Ensure no default body margin */
+}
+
+/* Contenedor principal tipo app */
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+/* Header - Tailwind handles most of this, but ensuring no conflicts */
+header {
+    width: 100%; /* Ensure header spans full width */
+}
+.bmis-text {
+    color: #d5932b;
+    font-size: 2.5rem; /* This is the new change */
+    display: inline-block; /* Added to help with vertical alignment */
+    line-height: 1; /* Added to reduce extra space around the large text */
+    padding-bottom: 1.5rem;
+
+}
+/* Estilo de alerta (if used) */
+.alerta {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border-left: 5px solid #ccc;
+}
+
+.alerta h2 {
+    margin: 0 0 5px;
+    font-size: 18px;
+}
+
+.alerta p {
+    margin: 0 0 8px;
+    font-size: 14px;
+}
+
+.estado {
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.estado.error {
+    background: #ff4d4f;
+    color: white;
+}
+
+.estado.warning {
+    background: #ffc107;
+    color: black;
+}
+
+.estado.ok {
+    background: #28a745;
+    color: white;
+}
+
+section {
+    width: 100%;
+    max-width: 1500px; /* Limits overall section width */
+    padding: 2px; /* Default padding for all sections */
+    box-sizing: border-box;
+    margin-bottom: 2rem; /* Add some margin between sections */
+}
+
+/* Specific section adjustments for spacing */
+section.text-center.py-16.px-6.max-w-4xl.mx-auto {
+    padding-top: 4rem; /* py-16 is roughly 4rem */
+    padding-bottom: 4rem;
+}
+
+section.max-w-6xl.mx-auto.rounded-xl.shadow-md.mb-16.px-4 {
+    margin-bottom: 4rem; /* Adjust mb-16 to 4rem for consistency */
+}
+
+/* SWIPER SECTION */
+.swiper-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 50px;
+    text-align: center;
+    overflow: hidden; /* Important for Swiper to work correctly */
+}
+
+.swiper-title {
+    font-size: 2.5rem; /* Larger font for desktop */
+    color: #d5932b;
+    margin-bottom: 0.5rem;
+}
+
+.swiper-subtitle {
+    font-size: 1.2rem; /* Larger font for desktop */
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* --- SWIPER SLIDE STYLES --- */
+.swiper-slide {
+    position: relative;
+    display: block;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Base width */
+    height: 700px; /* Base height */
+    overflow: hidden;
+    /* Adjust slide size for responsiveness */
+    transform: scale(0.8); /* Scale down non-active slides */
+    transition: transform 0.3s ease-in-out;
+}
+
+.swiper-slide-active {
+    transform: scale(1); /* Active slide is full size */
+}
+
+
+.slide-image-full {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.slide-image-full img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* --- ESTILOS PARA EL TEXTO SUPERPUESTO --- */
+.slide-overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 2;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.slide-overlay-text h3 {
+    color: #2c7777;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.8em;
+    font-weight: 900;
+}
+
+.slide-overlay-text p {
+    color: #d5932b;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+/* --- NAVIGATION BUTTON STYLING --- */
+.swiper-button-prev,
+.swiper-button-next {
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    background-color: #FF8C00;
+    border-radius: 50%;
+    top: 50%; /* Center vertically based on content */
+    transform: translateY(-50%); /* Adjust for perfect vertical centering */
+    box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.17);
+    position: absolute;
+    z-index: 10;
+    cursor: pointer; /* Indicate clickable */
+    display: flex; /* Use flexbox for icon centering */
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-prev {
+    left: 10px;
+}
+
+.swiper-button-next {
+    right: 10px;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: #FFA500;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    content: ''; /* Remove default Swiper icon */
+}
+
+.swiper-button-prev .bx,
+.swiper-button-next .bx {
+    font-size: 25px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1024px) { /* Adjust for larger tablets */
+    .swiper-title {
+        font-size: 2rem;
+    }
+    .swiper-subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) { /* Tablets and larger phones */
+    /* Header adjustments for smaller screens if needed (Tailwind handles most) */
+    .logo img {
+        width: 16vw; /* Make logo responsive to viewport width */
+        max-width: 80px;
+    }
+
+    nav.hidden.md\:flex { /* Hide desktop nav on smaller screens */
+        display: none;
+    }
+
+    header > a { /* Adjust register button padding */
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .swiper-slide {
+        width: 250px; /* Slightly smaller slide on tablets */
+        height: 600px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    .swiper-button-prev {
+        left: 5px;
+    }
+    .swiper-button-next {
+        right: 5px;
+    }
+
+    .slide-overlay-text h3 {
+        font-size: 1.5em; /* Smaller heading on mobile */
+    }
+
+    .slide-overlay-text p {
+        font-size: 1.2rem; /* Smaller paragraph on mobile */
+    }
+
+    /* Form section on mobile */
+    section.max-w-6xl.mx-auto.px-6.md\:grid.md\:grid-cols-2 {
+        grid-template-columns: 1fr; /* Stack columns on small screens */
+    }
+
+    section .h-full.flex.items-center.justify-center {
+        margin-bottom: 2rem; /* Add space between image and form */
+    }
+}
+
+@media (max-width: 480px) { /* Small mobile devices */
+    section {
+        padding: 15px; /* Reduce overall section padding */
+    }
+
+    .swiper-slide {
+        width: 200px; /* Even smaller slides on tiny phones */
+        height: 500px;
+    }
+
+    .swiper-title {
+        font-size: 1.8rem;
+    }
+    .swiper-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .slide-overlay-text h3 {
+        font-size: 1.3em;
+    }
+
+    .slide-overlay-text p {
+        font-size: 1rem;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 35px;
+        height: 35px;
+    }
+}
