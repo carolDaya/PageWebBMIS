@@ -1,57 +1,197 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Swiper Coverflow 3D</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_arrow_left" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_arrow_right" />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BMIS - Energía limpia</title>
+
+  <!-- CSS y Librerías -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_arrow_left" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_arrow_right" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f3f8f5;
+      color: #2b221e;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: #e8f5e9;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #2e7d32;
+    }
+
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+      color: #1b5e20;
+    }
+
+    .hero h2 {
+      font-size: 20px;
+      color: #4e4e4e;
+      margin-bottom: 40px;
+    }
+
+    .hero-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .imagen {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .imagen img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 14px 30px;
+      background: #2e7d32;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    
+
+    .info-section {
+      background: #ffffff;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .info-section h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #2e7d32;
+    }
+
+    .info-section p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 18px;
+      color: #555;
+    }
+
+    footer {
+      background: #c8e6c9;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #333;
+      margin-top: 50px;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
 
 <!-- NAVBAR -->
 <header class="bg-white shadow-md py-4 px-6 flex items-center sticky top-0 z-50 w-full">
-    <div class="logo">
-        <img src="img/logo.png" alt="Logo" class="w-20 h-auto" />
-    </div>
+  <div class="logo">
+    <img src="img/logo.png" alt="Logo" class="w-20 h-auto" />
+  </div>
 
-    <div class="md:hidden ml-auto"> <button id="hamburger-button" class="text-gray-800 focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
-    </div>
+  <div class="md:hidden ml-auto">
+    <button id="hamburger-button" class="text-gray-800 focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+           xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
 
-    <nav id="navigation-menu" class="hidden md:flex flex-grow justify-center space-x-6 text-sm md:space-x-6">
-        <a href="#" class="hover:text-[#1E726E] block py-2 md:py-0">Inicio</a>
-        <a href="#sobrebmis" class="hover:text-[#1E726E] block py-2 md:py-0">Sobre BMIS</a>
-        <a href="#funcionalidades" class="hover:text-[#1E726E] block py-2 md:py-0">Funcionalidades</a>
-        <a href="#contacto" class="hover:text-[#1E726E] block py-2 md:py-0">Contacto</a>
-    </nav>
+  <nav id="navigation-menu" class="hidden md:flex flex-grow justify-center space-x-6 text-sm md:space-x-6">
+    <a href="#" class="hover:text-[#1E726E] block py-2 md:py-0">Inicio</a>
+    <a href="#sobrebmis" class="hover:text-[#1E726E] block py-2 md:py-0">Sobre BMIS</a>
+    <a href="#funcionalidades" class="hover:text-[#1E726E] block py-2 md:py-0">Funcionalidades</a>
+    <a href="#contacto" class="hover:text-[#1E726E] block py-2 md:py-0">Contacto</a>
+  </nav>
 </header>
 
-<!-- SECCIÓN SOBRE -->
-<section id="sobrebmis">
-<section class="text-center py-16 px-6 max-w-7xl mx-auto pb-1">  <h2 class="bmis-text">Sobre BMIS</h2>
-       <p class="text-xl text-gray-800 leading-relaxed explanation-paragraph">
-         <span class="bmis-text-color">BMIS</span> (Biodigester Monitoring Intelligent System) es un sistema inteligente que permite monitorear en tiempo real la producción de biogás en biodigestores mediante sensores y asistencia por voz basada en inteligencia artificial. Está diseñado para comunidades rurales, facilitando el acceso a información clara sobre el estado del sistema a través de una aplicación móvil. Su objetivo es impulsar el uso de energías limpias, mejorar la calidad de vida y promover la sostenibilidad ambiental en zonas con acceso limitado a recursos energéticos tradicionales.
-      </p>
+<!-- HERO -->
+<section class="hero">
+  <h1>BMIS - Energía limpia e inteligente para el campo</h1>
+  <h2>Transformamos desechos orgánicos en biogás, monitoreado por inteligencia artificial</h2>
+
+  <div class="hero-content">
+    <div class="imagen">
+      <img src="https://img.freepik.com/premium-photo/colombian-families-lactam-farm-finch-colombian-couples-family_215372-7238.jpg"
+           alt="Familia rural colombiana">
+    </div>
+    <div class="imagen">
+      <img src="https://static.wixstatic.com/media/4d357d_939dde8fb5d348a7a73dec519a32f2de~mv2.jpg/v1/fill/w_560,h_376,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4d357d_939dde8fb5d348a7a73dec519a32f2de~mv2.jpg"
+           alt="Biodigestor subterráneo">
+    </div>
+  </div>
+
+
 </section>
-<section class="max-w-6xl mx-auto rounded-xl shadow-md mb-16 px-2"> <div class="relative video-container" style="padding-top: 48%;"> <iframe class="absolute top-0 left-0 w-full h-full rounded-xl"
-      src="https://www.youtube.com/embed/MDtgoxZT9oI" title="Anuncio Publicitario"
-      frameborder="0"
-      allowfullscreen>
+
+<!-- INFO -->
+<section class="info-section" id="sobrebmis">
+  <h3>¿Qué es BMIS?</h3>
+  <p>
+    (Biodigester Monitoring Intelligent System) es un sistema inteligente que permite monitorear en tiempo real la
+    producción de biogás en biodigestores mediante sensores y asistencia por voz basada en inteligencia artificial. Está
+    diseñado para comunidades rurales, facilitando el acceso a información clara sobre el estado del sistema a través de
+    una aplicación móvil. Su objetivo es impulsar el uso de energías limpias, mejorar la calidad de vida y promover la
+    sostenibilidad ambiental en zonas con acceso limitado a recursos energéticos tradicionales.
+  </p>
+</section>
+
+<!-- VIDEO -->
+<section class="max-w-6xl mx-auto rounded-xl shadow-md mb-16 px-2">
+  <div class="relative video-container" style="padding-top: 48%;">
+    <iframe class="absolute top-0 left-0 w-full h-full rounded-xl"
+            src="https://www.youtube.com/embed/MDtgoxZT9oI" title="Anuncio Publicitario"
+            frameborder="0" allowfullscreen>
     </iframe>
   </div>
 </section>
-</section>
-
 
 <!-- SWIPER SECTION -->
 <section id="funcionalidades">
@@ -144,51 +284,49 @@
       <script src="js/script.js"></script>
 </section>
 </section> 
-
-<!-- SECCIÓN DE FORMULARIO -->
+<!-- FORMULARIO -->
 <section id="contacto" class="max-w-6xl mx-auto px-6 md:grid md:grid-cols-2 gap-10 items-center pb-20">
+  <div class="h-full flex items-center justify-center">
+    <img src="img/BMIS.png" alt="Usuario llenando formulario" class="w-full object-contain max-h-[500px]" />
+  </div>
 
-      <div class="h-full flex items-center justify-center">
-          <img src="img/BMIS.png" alt="Usuario llenando formulario" class="w-full object-contain max-h-[500px]" />
+  <div class="bg-white p-8 rounded-lg shadow-lg w-full">
+    <form action="formulario.php" method="POST" class="space-y-4">
+      <h3 class="text-2xl font-bold mb-6 text-[#1E726E]">Formulario de participación BMIS</h3>
+
+      <input type="text" name="nombre" placeholder="Nombre completo" required class="w-full px-4 py-2 border border-gray-300 rounded-md" />
+      <input type="text" name="direccion" placeholder="Dirección o zona" required class="w-full px-4 py-2 border border-gray-300 rounded-md" />
+      <input type="tel" name="celular" placeholder="Número de celular" required class="w-full px-4 py-2 border border-gray-300 rounded-md" />
+
+      <label class="block font-medium text-gray-700">¿Está interesado(a) en participar en el proyecto BMIS?</label>
+      <div>
+        <label class="mr-4"><input type="radio" name="interes" value="Sí" required /> Sí</label>
+        <label class="mr-4"><input type="radio" name="interes" value="No" /> No</label>
+        <label><input type="radio" name="interes" value="Necesito más información" /> Necesito más información</label>
       </div>
 
-      <div class="bg-white p-8 rounded-lg shadow-lg w-full">
-          <form action="formulario.php" method="POST" class="space-y-4">
-              <h3 class="text-2xl font-bold mb-6 text-[#1E726E]">Formulario de participación BMIS</h3>
-
-              <input type="text" name="nombre" placeholder="Nombre completo" required class="w-full px-4 py-2 border border-gray-300 rounded-md" />
-              <input type="text" name="direccion" placeholder="Dirección o zona" required class="w-full px-4 py-2 border border-gray-300 rounded-md" />
-              <input type="tel" name="celular" placeholder="Número de celular" required class="w-full px-4 py-2 border border-gray-300 rounded-md" />
-
-              <label class="block font-medium text-gray-700">¿Está interesado(a) en participar en el proyecto BMIS?</label>
-              <div>
-                  <label class="mr-4"><input type="radio" name="interes" value="Sí" required /> Sí</label>
-                  <label class="mr-4"><input type="radio" name="interes" value="No" /> No</label>
-                  <label><input type="radio" name="interes" value="Necesito más información" /> Necesito más información</label>
-              </div>
-
-              <label class="block font-medium text-gray-700">¿Tiene espacio en casa para instalar un pequeño sistema de biodigestor?</label>
-              <div>
-                  <label class="mr-4"><input type="radio" name="espacio" value="Sí" required /> Sí</label>
-                  <label class="mr-4"><input type="radio" name="espacio" value="No" /> No</label>
-                  <label><input type="radio" name="espacio" value="No estoy seguro(a)" /> No estoy seguro(a)</label>
-              </div>
-
-              <label class="block font-medium text-gray-700">¿Desea recibir una breve capacitación sobre el uso del BMIS?</label>
-              <div class="mb-4">
-                  <label class="mr-4"><input type="radio" name="capacitacion" value="Sí" required /> Sí</label>
-                  <label><input type="radio" name="capacitacion" value="No" /> No</label>
-              </div>
-
-              <button type="submit" class="bg-[#1E726E] text-white px-6 py-2 rounded-md hover:bg-[#155e5b] transition">Enviar</button>
-          </form>
+      <label class="block font-medium text-gray-700">¿Tiene espacio en casa para instalar un pequeño sistema de biodigestor?</label>
+      <div>
+        <label class="mr-4"><input type="radio" name="espacio" value="Sí" required /> Sí</label>
+        <label class="mr-4"><input type="radio" name="espacio" value="No" /> No</label>
+        <label><input type="radio" name="espacio" value="No estoy seguro(a)" /> No estoy seguro(a)</label>
       </div>
+
+      <label class="block font-medium text-gray-700">¿Desea recibir una breve capacitación sobre el uso del BMIS?</label>
+      <div class="mb-4">
+        <label class="mr-4"><input type="radio" name="capacitacion" value="Sí" required /> Sí</label>
+        <label><input type="radio" name="capacitacion" value="No" /> No</label>
+      </div>
+
+      <button type="submit" class="bg-[#1E726E] text-white px-6 py-2 rounded-md hover:bg-[#155e5b] transition">Enviar</button>
+    </form>
+  </div>
 </section>
-    
+
 <!-- FOOTER -->
-<footer class="bg-white py-6 text-center text-sm text-gray-600 border-t">
-      © 2025 BMIS. Todos los derechos reservados.
+<footer>
+  © 2025 BMIS - Proyecto para comunidades rurales sostenibles.
 </footer>
 
-  </body>
-  </html>
+</body>
+</html>
